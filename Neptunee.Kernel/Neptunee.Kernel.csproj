@@ -17,7 +17,7 @@
         <PackageTags>dotnet, csharp, web, api, CleanArchitecture, DDD</PackageTags>
         <Description>Domain-Driven Design (DDD) &amp; Clean Architecture with common design patterns.</Description>
         <TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
-        <Version>1.0.0</Version>
+        <Version>1.0.1</Version>
     </PropertyGroup>
 
     <ItemGroup>
