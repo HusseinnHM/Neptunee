@@ -1,7 +1,6 @@
 namespace Neptunee.Entities;
 
-public interface INeptuneeEntity<TKey> : INeptuneeEntity where TKey : struct, IEquatable<TKey>
+public interface INeptuneeEntity<TKey> : INeptuneeEntity
 {
     public TKey Id { get; set; }
 }
-
