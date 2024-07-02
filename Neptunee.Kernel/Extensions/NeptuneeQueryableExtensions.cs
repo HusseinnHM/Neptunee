@@ -30,6 +30,9 @@ public static class NeptuneeQueryableExtensions
     public static IQueryable<TEntity> Where<TEntity, TKey>(this IQueryable<TEntity> query, TKey id) where TEntity : class, INeptuneeEntity<TKey> where TKey : struct, IEquatable<TKey>
         => query.Where(entity => entity.Id.Equals(id));
 
+    public static IQueryable<TEntity> Where<TEntity, TKey>(this IQueryable<TEntity> query, IEnumerable<TKey> ids) where TEntity : class, INeptuneeEntity<TKey> where TKey : struct, IEquatable<TKey>
+        => query.Where(entity => ids.Contains(entity.Id));
+
     public static IQueryable<TEntity> FilterIgnoreSoftDeleted<TEntity>(this IQueryable<TEntity> query) where TEntity : class, INeptuneeDeletableEntity
         => query.Where(entity => !entity.UtcDateDeleted.HasValue);
 
